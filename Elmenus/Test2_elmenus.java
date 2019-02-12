@@ -103,7 +103,7 @@ action.sendKeys(Keys.ENTER).build().perform();
 			}
 		    
 		    Takescreenshoot();
-		    WebElement elmeulnk =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"body-content\"]/div[1]/div/div[1]/div/div/div/div[2]/div[1]/div/div[1]/a")));//*[@id=\'body-content\']/div[2]/div/div[1]/div/div/div/div[2]/div[1]/div/div")));
+		    WebElement elmeulnk =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\'body-content\']/div/div/div[1]/div/div/div/div[2]/div[1]/div/div[1]")));
 		
 		    elmeulnk.click();
 		    
@@ -185,6 +185,12 @@ action.sendKeys(Keys.ENTER).build().perform();
   		
   		DeleteReview();
   		
+  		
+  		driver.findElement(By.xpath("//div[@class='gb_1 gb_3a gb_nc gb_e']/div/a")).click();
+  	//Click on 'Logout' Button
+  	driver.findElement(By.xpath("//*[@id='gb_71']")).click();
+  		 
+  		
 		    }
  		   
  		 
@@ -215,7 +221,7 @@ action.sendKeys(Keys.ENTER).build().perform();
 		 WebElement Mstar=   driver.findElement(By.className("star-rating-editable-container"));
 		 WebElement fstar= Mstar.findElement(By.xpath("/html/body/div[9]/div[1]/div/div/div/div[1]/div/div/div[3]/div/div[2]/div[2]/div[4]/div/div/div[1]/div[1]/span[5]"));
 		 
-		 fstar.click();
+		 fstar.click(); //five star 
 		 
 	  
 	  
@@ -256,9 +262,9 @@ action.sendKeys(Keys.ENTER).build().perform();
       js.executeScript(stringBuilder.toString());
   }
 
-	public static void LoginFirst()
+	public static void LoginFirst() 
 	{
-		 System.setProperty("webdriver.chrome.driver","C:\\Users\\howida.magdy\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver","chrome\\chromedriver.exe");
 		 
 	//	String userProfile= "C:\\chromeusr\\Default";
 		ChromeOptions options = new ChromeOptions();
@@ -283,7 +289,7 @@ Deletebtn.click();
   @AfterTest
   public void afterTest() {
 	//  System.out.println("After test");
-	 // driver.close();
+	  driver.close();
   }
 
 }
