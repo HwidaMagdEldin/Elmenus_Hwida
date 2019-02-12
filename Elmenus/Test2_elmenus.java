@@ -170,18 +170,26 @@ action.sendKeys(Keys.ENTER).build().perform();
  		
   		driver.switchTo().defaultContent();
   		Addreview();
+  		
+  		
+  		
+  		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e)
+	    {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+		}
+  		
+  		
+  		
+  		DeleteReview();
+  		
 		    }
  		   
  		 
  		   
- 		
-
- 		   
-		
-
-		
-		
-		    
+   
 	}
   private static void Takescreenshoot()
   {
@@ -263,7 +271,14 @@ action.sendKeys(Keys.ENTER).build().perform();
 
 		
 	}
+public static void DeleteReview()
+{
 
+WebElement Deletebtn=  driver.findElement(By.xpath("//*[@id=\'fcxH9b\']/div[4]/c-wiz/div/div[2]/div/div[1]/div/div/c-wiz/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/content/span/span"));
+
+Deletebtn.click();
+
+}
 
   @AfterTest
   public void afterTest() {
